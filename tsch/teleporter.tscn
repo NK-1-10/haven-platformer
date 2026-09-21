@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://pochp5pavic0"]
+
+[ext_resource type="Script" uid="uid://dljtnpb5kunm2" path="res://gd/teleporter.gd" id="1_8iuw8"]
+[ext_resource type="Texture2D" uid="uid://f1i54xbpur3v" path="res://assets/__MamboLands AssetPack (FREE)/‏‏MamboLands/Items/items.png" id="1_gmawi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8iuw8"]
+atlas = ExtResource("1_gmawi")
+region = Rect2(192, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dcr5e"]
+atlas = ExtResource("1_gmawi")
+region = Rect2(240, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ttl4u"]
+atlas = ExtResource("1_gmawi")
+region = Rect2(288, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7vsan"]
+atlas = ExtResource("1_gmawi")
+region = Rect2(336, 48, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_821h7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8iuw8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dcr5e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ttl4u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7vsan")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gmawi"]
+radius = 33.06055
+
+[node name="teleporter" type="Node2D" unique_id=755379314]
+script = ExtResource("1_8iuw8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1657948788]
+sprite_frames = SubResource("SpriteFrames_821h7")
+animation = &"new_animation"
+autoplay = "new_animation"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1484875579]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1538809041]
+shape = SubResource("CircleShape2D_gmawi")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

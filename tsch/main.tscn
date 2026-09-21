@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://y4xg6en6xa0c"]
+
+[ext_resource type="Texture2D" uid="uid://414edxkehsum" path="res://assets/Pet Cats Pack/Cat-1/Cat-1-Sitting.png" id="1_1gu3e"]
+[ext_resource type="Script" uid="uid://c0vq2wvnpcb06" path="res://tsch/main.gd" id="1_qkbbm"]
+[ext_resource type="Texture2D" uid="uid://dpp230xr42uak" path="res://assets/Pet Cats Pack/Cat-2/Cat-2-Sitting.png" id="2_qkbbm"]
+[ext_resource type="Texture2D" uid="uid://drqw1m3bsp5vt" path="res://assets/Pet Cats Pack/Cat-4/Cat-4-Sitting.png" id="3_lcu8l"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1gu3e"]
+radius = 23.509455
+
+[node name="main" type="Node2D" unique_id=759249033]
+script = ExtResource("1_qkbbm")
+
+[node name="orange" type="Sprite2D" parent="." unique_id=1758726422]
+position = Vector2(299, 309)
+scale = Vector2(6, 6)
+texture = ExtResource("1_1gu3e")
+
+[node name="orange" type="Area2D" parent="orange" unique_id=944388165]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="orange/orange" unique_id=54970008]
+shape = SubResource("CircleShape2D_1gu3e")
+
+[node name="black" type="Sprite2D" parent="." unique_id=1012339492]
+position = Vector2(588, 310)
+scale = Vector2(6, 6)
+texture = ExtResource("2_qkbbm")
+
+[node name="black" type="Area2D" parent="black" unique_id=984865151]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="black/black" unique_id=1264828835]
+shape = SubResource("CircleShape2D_1gu3e")
+
+[node name="skinned" type="Sprite2D" parent="." unique_id=64806918]
+position = Vector2(878, 309)
+scale = Vector2(6, 6)
+texture = ExtResource("3_lcu8l")
+
+[node name="skinned" type="Area2D" parent="skinned" unique_id=1802855240]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="skinned/skinned" unique_id=873689734]
+shape = SubResource("CircleShape2D_1gu3e")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1770830289]
+offset_left = 782.0
+offset_top = -128.0
+offset_right = 986.0
+offset_bottom = 745.0
+color = Color(1, 1, 0.44313726, 0.39215687)
+
+[node name="Button" type="Button" parent="." unique_id=31976952]
+offset_left = 476.0
+offset_top = 506.0
+offset_right = 706.0
+offset_bottom = 569.0
+text = "Selected:"
+
+[connection signal="mouse_entered" from="orange/orange" to="." method="_on_orange_mouse_entered"]
+[connection signal="mouse_entered" from="black/black" to="." method="_on_black_mouse_entered"]
+[connection signal="mouse_entered" from="skinned/skinned" to="." method="_on_skinned_mouse_entered"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://r1x27kc4vmuy"]
+
+[node name="platformer" type="Node2D" unique_id=983587193]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1839071003]

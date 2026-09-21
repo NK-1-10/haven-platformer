@@ -1,0 +1,115 @@
+[gd_scene format=3 uid="uid://dej58ti3fxuoi"]
+
+[ext_resource type="Script" uid="uid://bcya1y5b4jcrw" path="res://gd/levels.gd" id="1_5ekvk"]
+[ext_resource type="Texture2D" uid="uid://f1i54xbpur3v" path="res://assets/__MamboLands AssetPack (FREE)/‏‏MamboLands/Items/items.png" id="2_3d4mi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fr7tq"]
+atlas = ExtResource("2_3d4mi")
+region = Rect2(192, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_me010"]
+atlas = ExtResource("2_3d4mi")
+region = Rect2(240, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qgtci"]
+atlas = ExtResource("2_3d4mi")
+region = Rect2(288, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r64fb"]
+atlas = ExtResource("2_3d4mi")
+region = Rect2(336, 48, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v73am"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fr7tq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_me010")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qgtci")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r64fb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="levels" type="Node2D" unique_id=742215573]
+script = ExtResource("1_5ekvk")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1578951808]
+
+[node name="Lvl one" type="Button" parent="CanvasLayer" unique_id=886880141]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 123.0
+offset_top = -29.0
+offset_right = 301.0
+offset_bottom = 29.0
+grow_vertical = 2
+text = "one
+"
+
+[node name="Lvl two" type="Button" parent="CanvasLayer" unique_id=1208156406]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -89.0
+offset_top = -29.0
+offset_right = 89.0
+offset_bottom = 29.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_disabled_color = Color(0.8745098, 0.18039216, 0.28235295, 0.5019608)
+theme_override_colors/icon_disabled_color = Color(0.57353663, 0, 0.07704704, 0.8509804)
+text = "two"
+
+[node name="Lvl three" type="Button" parent="CanvasLayer" unique_id=585773990]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -318.0
+offset_top = -28.0
+offset_right = -140.0
+offset_bottom = 30.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_disabled_color = Color(0.8745098, 0.18039216, 0.28235295, 0.5019608)
+theme_override_colors/icon_disabled_color = Color(0.57353663, 0, 0.07704704, 0.8509804)
+text = "three
+"
+
+[node name="first" type="AnimatedSprite2D" parent="CanvasLayer" unique_id=2119404028]
+position = Vector2(210, 232)
+sprite_frames = SubResource("SpriteFrames_v73am")
+
+[node name="second" type="AnimatedSprite2D" parent="CanvasLayer" unique_id=224883066]
+position = Vector2(576, 237)
+sprite_frames = SubResource("SpriteFrames_v73am")
+
+[node name="thrid" type="AnimatedSprite2D" parent="CanvasLayer" unique_id=1241292939]
+position = Vector2(920, 238)
+sprite_frames = SubResource("SpriteFrames_v73am")
+
+[node name="Button" type="Button" parent="." unique_id=274501227]
+offset_left = 51.0
+offset_top = 508.0
+offset_right = 1122.0
+offset_bottom = 576.0
+text = "quit
+"
+
+[connection signal="pressed" from="CanvasLayer/Lvl one" to="." method="_on_lvl_one_pressed"]
+[connection signal="pressed" from="CanvasLayer/Lvl two" to="." method="_on_lvl_two_pressed"]
+[connection signal="pressed" from="CanvasLayer/Lvl three" to="." method="_on_lvl_three_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

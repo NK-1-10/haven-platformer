@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://cjoggyuryipme"]
+
+[ext_resource type="Script" uid="uid://c4kjmbh4vu0ix" path="res://gd/start.gd" id="1_0ls4u"]
+
+[node name="start" type="Node2D" unique_id=1683382760]
+script = ExtResource("1_0ls4u")
+
+[node name="Button" type="Button" parent="." unique_id=2126580883]
+offset_left = 498.0
+offset_top = 259.0
+offset_right = 631.0
+offset_bottom = 338.0
+text = "Start"
+
+[node name="Button2" type="Button" parent="." unique_id=1747299047]
+offset_left = 512.0
+offset_top = 354.0
+offset_right = 618.0
+offset_bottom = 426.0
+text = "quit
+"
+
+[node name="Label" type="Label" parent="." unique_id=459002257]
+offset_left = 61.0
+offset_top = 128.0
+offset_right = 207.0
+offset_bottom = 255.0
+text = "Assets:
+Cats: 
+LuizMelo itch.io
+tileset:
+Mohammed itch.io"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
